@@ -31,8 +31,3 @@ Utility for serializing and deserializing data to and from binary and string for
 # License
 
 [Apache License Version 2.0](https://github.com/indeedeng/util/blob/master/LICENSE)
-
-# Contributing
-
-
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/indeedeng/util/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
