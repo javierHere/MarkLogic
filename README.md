@@ -1,32 +1,46 @@
-# javierHere/MarkLogic
+# [General Networks Corporation](http://www.gennet.com/) Data Export Utility
 
-## [util-core](https://github.com/indeedeng/util/tree/master/util-core)
+# Download Executable Jar (GNC_Data_Export.jar) and Documentation
 
-General Java utilities and helper classes
+Located [here](http://www.gennet.com/offerings/big-data/marklogic-nosql-database-platform-services/).
 
-## [util-varexport](https://github.com/indeedeng/util/tree/master/varexport)
+## Running from command prompt
 
-Utility that enables you to expose runtime variables from a running Java application
+1. Download Executable Jar (GNC_Data_Export.jar)
+2. Configure settings.txt 
+    - Set data source type ORACLE, MSSQL, MARKLOGIC
+    - Configure source connection strings
+    - Configure log destination, resultset output & performance settings
+3. Configure query.txt
+    - Enter query string
+4. Execute the following command
+    - java -jar C:\Export\GNC_Data_Export.jar C:\Export\settings.txt
+5. See default C:\Export\ResultSet\<configured filename in settings.txt> for resultset
+6. See default C:\Export\Logs\<configured filename in settings.txt> for log file entries
 
-## [util-urlparsing](https://github.com/indeedeng/util/tree/master/urlparsing)
+## Jar File Dependencies
 
-Utility to efficiently parse key value pairs from query strings in URLs. Also includes fast number parsing and url decoding utilities.
-
-## [util-compress](https://github.com/indeedeng/util/tree/master/compress)
-
-Utility for compressing and uncompressing data. Includes snappy and gzip.
-
-## [util-io](https://github.com/indeedeng/util/tree/master/io)
-
-Utility for performing IO, including many interfaces implemented elsewhere.
-
-## [util-mmap](https://github.com/indeedeng/util/tree/master/mmap)
-
-Utility for performing mmap operations and direct memory access.
-
-## [util-serialization](https://github.com/indeedeng/util/tree/master/serialization)
-
-Utility for serializing and deserializing data to and from binary and string formats.
+	MarkLogic-Java-API-3.0.4/java-client-api-3.0.4/lib/commons-codec-1.7.jar
+	MarkLogic-Java-API-3.0.4/java-client-api-3.0.4/lib/commons-logging-1.1.1.jar
+	MarkLogic-Java-API-3.0.4/java-client-api-3.0.4/lib/httpclient-4.1.1.jar
+	MarkLogic-Java-API-3.0.4/java-client-api-3.0.4/lib/httpcore-4.1.jar
+	MarkLogic-Java-API-3.0.4/java-client-api-3.0.4/lib/jackson-annotations-2.4.1.jar
+	MarkLogic-Java-API-3.0.4/java-client-api-3.0.4/lib/jackson-core-2.4.1.jar
+	MarkLogic-Java-API-3.0.4/java-client-api-3.0.4/lib/jackson-databind-2.4.1.jar
+	MarkLogic-Java-API-3.0.4/java-client-api-3.0.4/lib/java-client-api-3.0.4.jar
+	MarkLogic-Java-API-3.0.4/java-client-api-3.0.4/lib/jersey-apache-client4-1.17.jar
+	MarkLogic-Java-API-3.0.4/java-client-api-3.0.4/lib/jersey-client-1.17.jar
+	MarkLogic-Java-API-3.0.4/java-client-api-3.0.4/lib/jersey-core-1.17.jar
+	MarkLogic-Java-API-3.0.4/java-client-api-3.0.4/lib/jersey-multipart-1.17.jar
+	MarkLogic-Java-API-3.0.4/java-client-api-3.0.4/lib/logback-classic-1.1.2.jar
+	MarkLogic-Java-API-3.0.4/java-client-api-3.0.4/lib/logback-core-1.1.2.jar
+	MarkLogic-Java-API-3.0.4/java-client-api-3.0.4/lib/mimepull-1.6.jar
+	MarkLogic-Java-API-3.0.4/java-client-api-3.0.4/lib/mimepull-1.9.4.jar
+	MarkLogic-Java-API-3.0.4/java-client-api-3.0.4/lib/slf4j-api-1.7.4.jar
+	ojdbc6.jar
+	sqljdbc4.jar
+	jaxp-1_6_0/lib/jaxp-api.jar
+	jaxp-1_6_0/lib/jaxp-ri.jar
 
 # License
 
