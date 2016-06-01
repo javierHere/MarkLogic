@@ -21,7 +21,7 @@
 	<classpathentry kind="lib" path="C:/Extract/MarkLogic-Java-API-3.0.4/java-client-api-3.0.4/lib/slf4j-api-1.7.4.jar"/>
 	<classpathentry kind="lib" path="C:/Extract/ojdbc6.jar"/>
 	<classpathentry kind="lib" path="C:/ExtractMSSQL/sqljdbc4.jar"/>
-	<classpathentry kind="lib" path="C:/Chevron/jaxp-1_6_0/lib/jaxp-api.jar"/>
-	<classpathentry kind="lib" path="C:/Chevron/jaxp-1_6_0/lib/jaxp-ri.jar"/>
+	<classpathentry kind="lib" path="C:/jaxp-1_6_0/lib/jaxp-api.jar"/>
+	<classpathentry kind="lib" path="C:/jaxp-1_6_0/lib/jaxp-ri.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
