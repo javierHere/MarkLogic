@@ -15,8 +15,8 @@ Located [here](http://www.gennet.com/offerings/big-data/marklogic-nosql-database
     - Enter query string
 4. Execute the following command
     - java -jar C:\Export\GNC_Data_Export.jar C:\Export\settings.txt
-5. See default C:\Export\ResultSet\<configured filename in settings.txt> for resultset
-6. See default C:\Export\Logs\<configured filename in settings.txt> for log file entries
+5. See default C:\Export\ResultSet\<<configured filename in settings.txt>> for resultset
+6. See default C:\Export\Logs\<<configured filename in settings.txt>> for log file entries
 
 ## Jar File Dependencies
 
