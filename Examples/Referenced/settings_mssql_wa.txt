@@ -1,0 +1,70 @@
+
+#########################################################################
+STEP 1 - SET THE DATABASE TYPE AND DELIMITER
+#########################################################################
+#indicate if the extraction should be MARKLOGIC, ORACLE, MSSQL
+
+DB_TYPE=MSSQL
+DELIMITER=|
+
+#########################################################################
+STEP 2 - EDIT THE SETTINGS FOR THE DB TYPE YOU ARE USING
+###############ORACLE######################################################
+
+ORACLE_HOST=localhost
+ORACLE_PORT=1521
+ORACLE_USERNAME=marklogic_ro
+ORACLE_PASSWORD=ENC(0s9ZqzKoK9oicsJS5iOpOh1kUpuZFcwe)
+
+ORACLE_SID=XE
+ORACLE_SERVICE_NAME=
+
+ORACLE_FETCH_SIZE=5000
+ORACLE_OUTPUT_SIZE=50
+ORACLE_CHUNK_SIZE=5000
+##ALL backslashes "\" need to be replaced with forward slashes "/"
+ORACLE_QUERY_FILE_PATH=C:/Export/Examples/Referenced/query.txt
+ORACLE_OUTPUT_DIR=C:\\Export\\ResultSet\\
+ORACLE_LOGS_DIR =C:\\Export\\Logs\\
+
+ORACLE_NO_HEADER=FALSE
+ORACLE_DATE_FORMAT=YYYY-MM-dd'T'HH:mm:ss
+
+###############MS SQL SERVER########################################################
+
+MSSQL_HOST=localhost
+MSSQL_PORT=1433
+MSSQL_USERNAME=marklogic_user
+MSSQL_PASSWORD=
+
+MSSQL_FETCH_SIZE=5000
+MSSQL_OUTPUT_SIZE=50
+MSSQL_CHUNK_SIZE=50
+##ALL backslashes "\" need to be replaced with forward slashes "/"
+MSSQL_QUERY_FILE_PATH=C:/Export/Examples/Referenced/query.txt
+MSSQL_OUTPUT_DIR=C:\\Export\\ResultSet\\
+MSSQL_LOGS_DIR =C:\\Export\\Logs\\
+
+MSSQL_NO_HEADER=FALSE
+MSSQL_DATE_FORMAT=YYYY-MM-dd'T'HH:mm:ss
+
+# Populate the below only if you are planning on using Windows Authentication otherwise leave blank
+#If WINDOWS_AUTH is false then MSSQL Server Authentication is used.
+#Be sure to copy the sqljdbc_auth.dll to the ..\Windows\System32 directory if you opt to use MS SQL Windows Authentication
+MSSQL_WINDOWS_AUTH=TRUE
+MSSQL_DATABASE_NAME=myMSDB
+
+################MARKLOGIC####################
+MARKLOGIC_HOST=localhost
+MARKLOGIC_PORT=8001
+MARKLOGIC_USERNAME=marklogic_ro
+MARKLOGIC_PASSWORD=ENC(0s9ZqzKoK9oicsJS5iOpOh1kUpuZFcwe)
+
+MARKLOGIC_DB_NAME=Appointments
+MARKLOGIC_PAGE_SIZE=5000
+##ALL backslashes "\" need to be replaced with forward slashes "/"
+MARKLOGIC_OUTPUT_PATH=C:\\Export\\ResultSet\\OUTPUT.TXT
+MARKLOGIC_LOGS_DIR =C:\\Export\\Logs\\
+MARKLOGIC_ELEMENTS_FILE_PATH=C:\\Export\\MarkLogic\\elements.txt
+MARKLOGIC_FILTERS_FILE_PATH=C:\\Export\\MarkLogic\\filters.txt
+MARKLOGIC_ROOT_NODE=

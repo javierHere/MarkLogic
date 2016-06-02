@@ -1,0 +1,1 @@
+myDataFile###C:/Examples/Referenced/my_sql_query.txt###SELECT count(*) FROM TEST_TABLE;

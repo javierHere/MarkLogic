@@ -1,0 +1,1 @@
+myDataFile###SELECT * FROM TEST_TABLE;###SELECT count(*) FROM TEST_TABLE;
