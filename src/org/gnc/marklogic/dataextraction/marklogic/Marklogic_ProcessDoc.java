@@ -16,7 +16,6 @@
  * The use of the Apache License does not indicate that this project is 
  * affiliated with the Apache Software Foundation. 
  */
-
 package org.gnc.marklogic.dataextraction.marklogic;
 
 import com.marklogic.client.document.DocumentRecord;
@@ -26,16 +25,12 @@ import com.marklogic.client.io.DOMHandle;
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintStream;
-// import java.io.StringReader;
-// import java.io.StringWriter;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-// import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
-// import javax.xml.transform.Source;
 import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerConfigurationException;
 import javax.xml.transform.TransformerException;
@@ -64,8 +59,7 @@ public class Marklogic_ProcessDoc implements Runnable {
     private String ROOT_NODE;
     private XMLDocumentManager docMgr;
 
-
-    public Marklogic_ProcessDoc(DocumentRecord document, ArrayList<String> elements, PrintStream out, String DELIMITER, XMLDocumentManager docMgr, String ROOT_NODE, String CUSTOM_TRANSFORM) {
+    public Marklogic_ProcessDoc(DocumentRecord document, ArrayList<String> elements, PrintStream out, String DELIMITER, XMLDocumentManager docMgr, String ROOT_NODE) {
         this.document = document;
         this.elements = elements;
         this.out = out;
@@ -111,17 +105,23 @@ public class Marklogic_ProcessDoc implements Runnable {
                 Element uriElement = tempDoc.createElement("DOC_URI");
                 uriElement.setTextContent(document.getUri());
                 tempNode.appendChild(uriElement);
+                
+                // add index to temp doc
+                Element indexElement = tempDoc.createElement("ITEM_INDEX");
+                indexElement.setTextContent(String.valueOf(j+1));
+                tempNode.appendChild(indexElement);
 
                 // add parents of root element and parent's siblings to temp doc
                 tempNode = addParentsAndParentsSiblings(tempNode, rootNode, tempDoc);
-
                 // transform attributes to elements
                 tempDoc = transformDoc(tempNode, transformer);
                 mlDoc = tempDoc;
-            }
-        }
 
-        printOutElements(mlDoc);
+                printOutElements(mlDoc);
+            }
+        }else{
+            printOutElements(mlDoc);
+        }
 
     }
 
@@ -151,20 +151,11 @@ public class Marklogic_ProcessDoc implements Runnable {
         }
     }
 
-
     // this method has been built to work for specific solution and likely needs further fine tuning to be fully generic
     private Node addParentsAndParentsSiblings(Node tempNode, Node rootNode, Document tempDoc) {
         Node parent = rootNode.getParentNode();
         while (parent instanceof Element) {
             tempNode.appendChild(tempDoc.importNode(parent, false));
-            //add parent's children except where child has same name as root node
-            Node child = parent.getLastChild();
-            while (child != null && !child.getNodeName().equals("")) {
-                if (!child.getNodeName().equals(ROOT_NODE)) {
-                    tempNode.appendChild(tempDoc.importNode(child, true));
-                }
-                child = child.getPreviousSibling();
-            }
 
             // add parent's siblings except where sibling has same name
             Node sibling = parent.getPreviousSibling();
