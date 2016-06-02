@@ -48,3 +48,5 @@ Located [here](http://www.gennet.com/offerings/big-data/marklogic-nosql-database
 # License
 
 [Apache License Version 2.0](https://github.com/indeedeng/util/blob/master/LICENSE)
+
+#Contact us at jlizarraga@gennet.com
