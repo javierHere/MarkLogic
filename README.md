@@ -1,4 +1,7 @@
-# [General Networks Corporation](http://www.gennet.com/) Data Export Utility
+# [General Networks Corporation](http://www.gennet.com/) 
+
+# Data Export Utility Overview
+The GNC Data Export Utility is a Java-based command-line application that allows easy importing and exporting of data when using MarkLogic NoSql Databases.  The utility supports two types of data sources, relational databases (currently Oracle and MS SQL) and MarkLogic databases.  Depending on the data source, the program leverages different configuration files that contain connection information, queries, filters, selected elements and file locations.  Data is exported to a text-delimited file with a user-defined delimiter.  Data pulled out of relational databases may then be imported into MarkLogic using the MarkLogic Content Pump (MLCP), while data pulled out of MarkLogic may be imported into other applications that are compatible with a text-delimited format such as Excel, R and Tableau.
 
 # Download Executable Jar (GNC_Data_Export.jar) and Documentation
 
