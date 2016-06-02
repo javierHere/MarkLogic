@@ -37,18 +37,16 @@ public class ML_ProcessPage implements Runnable {
     private final ArrayList<String> elements;
     private final PrintStream out;
     private final String DELIMITER;
-    private final String CUSTOM_TRANSFORM;
     private final XMLDocumentManager docMgr;
     private final String ROOT_NODE;
 
-    public ML_ProcessPage(DocumentPage documents, ArrayList<String> elements, PrintStream out, String DELIMITER, XMLDocumentManager docMgr, String ROOT_NODE, String CUSTOM_TRANSFORM) {
+    public ML_ProcessPage(DocumentPage documents, ArrayList<String> elements, PrintStream out, String DELIMITER, XMLDocumentManager docMgr, String ROOT_NODE) {
         this.documents = documents;
         this.elements = elements;
         this.out = out;
         this.DELIMITER = DELIMITER;
         this.docMgr = docMgr;
         this.ROOT_NODE = ROOT_NODE;
-        this.CUSTOM_TRANSFORM = CUSTOM_TRANSFORM;
     }
 
     public void run() {
